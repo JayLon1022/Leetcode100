@@ -31,6 +31,9 @@ class HashMap {
 
   private:
     int hash(auto key) {
-      //..
+      int h = key.hashcode();
+      h = h & 0x7FFFFFFF;
+      return h % table.size();
     }
 };
+
